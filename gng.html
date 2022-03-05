@@ -64,7 +64,8 @@
       stimuli: all_trials,
       choices: ['F'],
       is_html: true,
-      timing_response: 1000
+      timing_response: 1000,
+      post_trial_gap: getRandomInt(2000, 7000)
     };
 
     /* create experiment definition array */
@@ -75,7 +76,6 @@
 
     /* start the experiment */
     jsPsych.init({
-      default_iti: getRandomInt(2000, 7000),
       experiment_structure: experiment
     });
   </script>
