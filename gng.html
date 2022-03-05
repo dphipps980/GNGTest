@@ -35,7 +35,15 @@
           "<p>Press any key to begin.</p>",
       timing_post_trial: 2000
     };
-
+    
+    
+    /* define iti */
+    function getRandomInt(min, max) {
+       min = Math.ceil(min);
+       max = Math.floor(max);
+       return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      };
+     
     /* define test block */
 
     var test_stimuli = ['<p class="IAT-stimuli";  style="font-size: 35px">a</p>',
@@ -68,6 +76,7 @@
     /* start the experiment */
     jsPsych.init({
       experiment_structure: experiment
+      default_iti: getRandomInt(2000, 7000),
     });
   </script>
 </html>
